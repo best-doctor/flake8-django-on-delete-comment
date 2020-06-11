@@ -26,13 +26,13 @@ class DjangoOnDeleteCommentChecker:
         self,
         cascade_lines_without_noqa: typing.Set[int],
     ) -> typing.List[typing.Tuple[int, int, str]]:
-        errors: typing.List = []
+        errors: typing.List[typing.Tuple[int, int, str]] = []
         if cascade_lines_without_noqa:
-
             for line in cascade_lines_without_noqa:
                 errors.append((
                     line,
                     0,
                     'CD001 field needs a valid comment for on_delete',
                 ))
+
         return errors

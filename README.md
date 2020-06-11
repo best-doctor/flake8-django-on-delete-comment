@@ -1,6 +1,7 @@
 # flake8-django-on-delete-comment
 
-A flake8 extension to validate django models ForeignKey fields on on_delete CASCADE comment.
+A flake8 extension to validate django models ForeignKey fields
+on on_delete CASCADE comment.
 
 ```python
 test_field = models.ForeignKey(  # allowed_cascade
@@ -9,8 +10,7 @@ test_field = models.ForeignKey(  # allowed_cascade
 )
 ```
 
-CASCADE can be not safe to choose, so such fields should be marked by comment. 
-
+CASCADE can be not safe to choose, so such fields should be marked by comment.
 
 ## Installation
 

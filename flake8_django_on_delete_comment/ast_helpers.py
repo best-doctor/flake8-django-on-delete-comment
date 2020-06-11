@@ -9,18 +9,19 @@ def get_field_lines_with_on_delete_cascade(ast_tree: ast.AST) -> typing.Set:
     field_lines_with_cascade_on_delete = set()
     lines_with_cascade_attr = set()
     for node in ast.walk(ast_tree):
-        if isinstance(node, ast.Call):
-            for keyword in node.keywords:
-                if keyword.arg == 'on_delete' and (
-                        hasattr(keyword.value, 'value') and keyword.value.attr == 'CASCADE'):  # type: ignore
-                    field_lines_with_cascade_on_delete.add(node.lineno)
-                    lines_with_cascade_attr.add(keyword.value.lineno)
-                    break
+        if not isinstance(node, ast.Call):
+            continue
+        for keyword in node.keywords:
+            if keyword.arg == 'on_delete' and (
+                    hasattr(keyword.value, 'value') and keyword.value.attr == 'CASCADE'):  # type: ignore
+                field_lines_with_cascade_on_delete.add(node.lineno)
+                lines_with_cascade_attr.add(keyword.value.lineno)
+                break
 
-            for child_node in ast.iter_child_nodes(node):
-                if isinstance(child_node, ast.Attribute) and (child_node.attr == 'CASCADE') and (
-                        node.lineno not in lines_with_cascade_attr):
-                    field_lines_with_cascade_on_delete.add(node.lineno)
+        for child_node in ast.iter_child_nodes(node):
+            if isinstance(child_node, ast.Attribute) and (child_node.attr == 'CASCADE') and (
+                    node.lineno not in lines_with_cascade_attr):
+                field_lines_with_cascade_on_delete.add(node.lineno)
     return field_lines_with_cascade_on_delete
 
 
