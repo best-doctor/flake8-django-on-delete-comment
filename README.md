@@ -1,5 +1,9 @@
 # flake8-django-on-delete-comment
 
+[![Build Status](https://travis-ci.org/best-doctor/flake8-django-on-delete-comment.svg?branch=master)](https://travis-ci.org/best-doctor/flake8-django-on-delete-comment)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3518733cdde9eede8959/maintainability)](https://codeclimate.com/github/best-doctor/flake8-django-on-delete-comment/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3518733cdde9eede8959/test_coverage)](https://codeclimate.com/github/best-doctor/flake8-django-on-delete-comment/test_coverage)
+
 A flake8 extension to validate django models ForeignKey fields
 on on_delete CASCADE comment.
 
