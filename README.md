@@ -1,6 +1,6 @@
 # flake8-django-on-delete-comment
 
-[![Build Status](https://travis-ci.org/best-doctor/flake8-django-on-delete-comment.svg?branch=master)](https://travis-ci.org/best-doctor/flake8-django-on-delete-comment)
+[![Build Status](https://github.com/best-doctor/flake8-django-on-delete-comment/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/best-doctor/flake8-django-on-delete-comment/actions/workflows/build.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3518733cdde9eede8959/maintainability)](https://codeclimate.com/github/best-doctor/flake8-django-on-delete-comment/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3518733cdde9eede8959/test_coverage)](https://codeclimate.com/github/best-doctor/flake8-django-on-delete-comment/test_coverage)
 
@@ -65,7 +65,7 @@ We would love you to contribute to our project. It's simple:
 Here are useful tips:
 
 - You can run all checks and tests with `make check`.
-  Please do it before TravisCI does.
+  Please do it before CI does.
 - We use [BestDoctor python styleguide](https://github.com/best-doctor/guides/blob/master/guides/en/python_styleguide.md).
 - We respect [Django CoC](https://www.djangoproject.com/conduct/).
   Make soft, not bullshit.
